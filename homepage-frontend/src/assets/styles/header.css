@@ -5,15 +5,17 @@
   width: 100%;
   top: 0;
   z-index: 1000;
+  height: 80px; /* ヘッダーの高さを固定 */
 }
 
 .header-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
+  padding: 0 40px; /* 上下のパディングを削除 */
   max-width: 1200px;
   margin: 0 auto;
+  height: 100%; /* ヘッダーコンテンツの高さを100%に */
 }
 
 .site-title {
@@ -34,6 +36,7 @@
   font-size: 1em;
   font-weight: bold;
   transition: color 0.3s ease;
+  line-height: 80px; /* ナビゲーションリンクの高さを調整 */
 }
 
 .nav-link:hover {
