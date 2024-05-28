@@ -37,9 +37,9 @@ const HomePage = () => {
 
   return (
     <div>
+      <Header />
       {showMainContent ? (
         <div className="container">
-          <Header />
           <motion.div className="intro" style={{ backgroundImage: `url(${backgroundImage})` }} animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ duration: 1 }}>
             <h1>
               <Typing 

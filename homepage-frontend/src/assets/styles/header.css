@@ -1,24 +1,41 @@
-header {
-    background-color: #f8f9fa;
-    color: #333;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  header h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-  }
-  
-  header nav a {
-    margin: 0 15px;
-    color: #28a745;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  header nav a:hover {
-    text-decoration: underline;
-  }
-  
+.header {
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #28a745;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #1e7e34;
+}

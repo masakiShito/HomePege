@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { motion } from 'framer-motion';
-import '../assets/styles/blogList.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { motion } from "framer-motion";
+import "../assets/styles/blogList.css";
 
 const BlogList = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/blogposts/')
-      .then(response => {
+    axios
+      .get("http://127.0.0.1:8000/api/blogposts/")
+      .then((response) => {
         setPosts(response.data);
       })
-      .catch(error => {
-        console.error('There was an error fetching the blog posts!', error);
+      .catch((error) => {
+        console.error("There was an error fetching the blog posts!", error);
       });
   }, []);
 
@@ -25,7 +26,7 @@ const BlogList = () => {
     >
       <h2>Latest Blog Posts</h2>
       <ul>
-        {posts.map(post => (
+        {posts.map((post) => (
           <li key={post.id}>
             <h3>{post.title}</h3>
             <p>{post.content}</p>

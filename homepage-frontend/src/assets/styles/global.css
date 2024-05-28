@@ -1,24 +1,23 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #fff;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-  
-  .container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-  }
-  
-  a {
-    color: #28a745;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
+  font-family: "Arial", sans-serif;
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+a {
+  color: #28a745;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
