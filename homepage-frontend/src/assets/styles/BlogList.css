@@ -1,0 +1,30 @@
+.blog-list {
+    background-color: #222;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  .blog-list h1 {
+    font-size: 2em;
+  }
+  
+  .blog-list ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .blog-list li {
+    margin-bottom: 20px;
+  }
+  
+  .blog-list h2 {
+    font-size: 1.5em;
+    margin: 0;
+  }
+  
+  .blog-list p {
+    font-size: 1em;
+    margin: 5px 0;
+  }
+  
