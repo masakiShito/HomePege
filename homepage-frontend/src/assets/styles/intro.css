@@ -1,0 +1,43 @@
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding-top: 0; /* ヘッダーのためのパディングを削除 */
+}
+
+.intro {
+  height: 100vh;
+  background: url("../images/background.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  color: white;
+}
+
+.intro h1 {
+  font-size: 3em;
+  color: #003366; /* ここで色を調整します */
+  text-align: center;
+  font-family: "Playfair Display", serif; /* フォントを適用 */
+}
+
+.loading-container {
+  width: 80%;
+  background-color: #333;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.loading-bar {
+  height: 20px;
+  background-color: #1e90ff;
+  border-radius: 10px;
+}
+
+.loading-text {
+  margin-top: 10px;
+  font-size: 1.5em;
+  color: #fff;
+  font-family: "Roboto", sans-serif; /* フォントを適用 */
+}

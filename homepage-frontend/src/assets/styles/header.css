@@ -1,0 +1,44 @@
+.header {
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  height: 80px; /* ヘッダーの高さを固定 */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px; /* 上下のパディングを削除 */
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%; /* ヘッダーコンテンツの高さを100%に */
+}
+
+.site-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  color: #28a745;
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  line-height: 80px; /* ナビゲーションリンクの高さを調整 */
+}
+
+.nav-link:hover {
+  color: #1e7e34;
+}
