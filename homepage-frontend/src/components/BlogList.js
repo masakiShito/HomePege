@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../assets/styles/BlogList.css';
+import { motion } from 'framer-motion';
+import '../assets/styles/blogList.css';
 
 const BlogList = () => {
   const [posts, setPosts] = useState([]);
@@ -16,19 +17,24 @@ const BlogList = () => {
   }, []);
 
   return (
-    <div className="blog-list">
-      <h1>Latest Blog Posts</h1>
+    <motion.div
+      className="blog-list"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <h2>Latest Blog Posts</h2>
       <ul>
         {posts.map(post => (
           <li key={post.id}>
-            <h2>{post.title}</h2>
+            <h3>{post.title}</h3>
             <p>{post.content}</p>
             <p>By {post.author.username}</p>
             <p>{post.created_at}</p>
           </li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 };
 
