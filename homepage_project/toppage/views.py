@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Profile, BlogPost, Skill, Career
-from .serializers import ProfileSerializer, BlogPostSerializer, SkillSerializer, CareerSerializer
+from .models import Profile, BlogPost, Skill, Career, Project
+from .serializers import ProfileSerializer, BlogPostSerializer, SkillSerializer, CareerSerializer, ProjectSerializer
 
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
@@ -17,3 +17,7 @@ class CareerViewSet(viewsets.ModelViewSet):
 class BlogPostViewSet(viewsets.ModelViewSet):
     queryset = BlogPost.objects.all()
     serializer_class = BlogPostSerializer
+
+class ProjectViewSet(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer

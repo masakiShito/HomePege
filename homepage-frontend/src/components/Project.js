@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../assets/styles/profile.css";
 import CareerTimeline from "./CareerTimeline";
-import PieChartComponent from "./PieChartComponent";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
@@ -31,24 +30,22 @@ const Profile = () => {
           alt="Profile"
           className="profile-picture"
         />
-        <h2 className="profile-name">{profile.user}</h2>
+        <h2 className="profile-name">{profile.user.username}</h2>
+        <p className="profile-title">{profile.bio}</p>
       </div>
       <div className="profile-body">
         <h3 className="section-title">About Me</h3>
         <p className="profile-description">{profile.bio}</p>
         <h3 className="section-title">Skills</h3>
-        <div className="skills-list">
+        <ul className="skills-list">
           {profile.skills.map((skill) => (
-            <div key={skill.id} className="skill-item">
-              <h4>{skill.name}</h4>
-              <PieChartComponent skill={skill} />
-            </div>
+            <li key={skill.id} className="skill-item">
+              {skill.name}: <span className="skill-level">{skill.level}%</span>
+            </li>
           ))}
-        </div>
+        </ul>
         <h3 className="section-title">Experience</h3>
-        <div className="timeline-container">
-          <CareerTimeline careers={profile.careers} />
-        </div>
+        <CareerTimeline careers={profile.careers} />
       </div>
     </div>
   );

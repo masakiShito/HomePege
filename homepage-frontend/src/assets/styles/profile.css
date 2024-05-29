@@ -1,44 +1,63 @@
-.profile {
-  height: 100vh;
-  background-color: #f8f9fa;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.profile img {
-  border-radius: 50%;
-  max-width: 150px;
-  display: block;
+.profile-container {
+  max-width: 900px;
   margin: 0 auto;
+  padding: 20px;
 }
 
-.profile h1 {
+.profile-header {
   text-align: center;
-  font-size: 1.5em;
 }
 
-.profile p {
-  text-align: center;
-  font-size: 1em;
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
 
-.skills {
+.profile-name {
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+.profile-body {
   margin-top: 20px;
 }
 
-.skills ul {
-  list-style-type: none;
-  padding: 0;
+.section-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
-.skills li {
-  background-color: #e9ecef;
+.profile-description {
+  font-size: 16px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  text-align: center;
+}
+
+.skill-item h4 {
   margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
+}
+
+.timeline-container {
+  margin-top: 20px;
+}
+
+.chart-container {
+  width: 150px;
+  height: 150px;
+  position: relative;
 }
