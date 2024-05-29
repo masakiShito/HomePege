@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../assets/styles/profile.css";
 import CareerTimeline from "./CareerTimeline";
+import PieChartComponent from "./PieChartComponent";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
@@ -36,15 +37,18 @@ const Profile = () => {
         <h3 className="section-title">About Me</h3>
         <p className="profile-description">{profile.bio}</p>
         <h3 className="section-title">Skills</h3>
-        <ul className="skills-list">
+        <div className="skills-list">
           {profile.skills.map((skill) => (
-            <li key={skill.id} className="skill-item">
-              {skill.name}: <span className="skill-level">{skill.level}%</span>
-            </li>
+            <div key={skill.id} className="skill-item">
+              <h4>{skill.name}</h4>
+              <PieChartComponent skill={skill} />
+            </div>
           ))}
-        </ul>
+        </div>
         <h3 className="section-title">Experience</h3>
-        <CareerTimeline careers={profile.careers} />
+        <div className="timeline-container">
+          <CareerTimeline careers={profile.careers} />
+        </div>
       </div>
     </div>
   );
