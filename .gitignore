@@ -18,3 +18,7 @@ lerna-debug.log*
 
 # Dependency directories
 jspm_packages/
+
+
+*.pyc
+__pycache__/
