@@ -30,7 +30,8 @@ const Profile = () => {
           alt="Profile"
           className="profile-picture"
         />
-        <h2 className="profile-name">{profile.user}</h2>
+        <h2 className="profile-name">{profile.user.username}</h2>
+        <p className="profile-title">{profile.bio}</p>
       </div>
       <div className="profile-body">
         <h3 className="section-title">About Me</h3>

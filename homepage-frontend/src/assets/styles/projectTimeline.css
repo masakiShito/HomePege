@@ -1,0 +1,59 @@
+.timeline-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline-item {
+  padding: 20px 0;
+  position: relative;
+  width: 50%;
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: #000;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.timeline-content {
+  padding: 20px;
+  background-color: #f9f9f9;
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item.left .timeline-content {
+  left: 0;
+}
+
+.timeline-item.right .timeline-content {
+  left: -100%;
+}
+
+.project-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.project-description {
+  font-size: 16px;
+  color: #666;
+  margin: 10px 0;
+}
