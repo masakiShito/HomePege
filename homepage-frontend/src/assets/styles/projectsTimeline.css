@@ -1,0 +1,84 @@
+/* src/assets/styles/projectsTimeline.css */
+
+.timeline-container {
+  padding: 40px 20px;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.timeline-container h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.timeline-date {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.vertical-timeline-element-content {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: relative;
+  margin-bottom: 20px;
+  transition: background 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.vertical-timeline-element-content:hover {
+  background: #e0f7fa;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.vertical-timeline-element-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.vertical-timeline-element-subtitle {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.vertical-timeline-element-content p {
+  font-family: "Open Sans", sans-serif;
+  color: #666;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.vertical-timeline-element-content strong {
+  font-weight: bold;
+}
+
+.vertical-timeline-element-content .fa-tasks,
+.vertical-timeline-element-content .fa-calendar-alt,
+.vertical-timeline-element-content .fa-user-tie {
+  color: rgb(76, 175, 80);
+  margin-right: 10px;
+}
+
+.vertical-timeline-element-content:hover .fa-tasks,
+.vertical-timeline-element-content:hover .fa-calendar-alt,
+.vertical-timeline-element-content:hover .fa-user-tie {
+  color: rgb(56, 142, 60);
+}
