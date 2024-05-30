@@ -1,0 +1,45 @@
+/* src/assets/styles/projects.css */
+
+.projects-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.projects-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.project-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  width: 30%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.project-item h3 {
+  margin-top: 0;
+}
+
+.project-item p {
+  margin: 10px 0;
+}
+
+.project-item a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.project-item a:hover {
+  text-decoration: underline;
+}
