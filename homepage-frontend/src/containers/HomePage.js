@@ -1,3 +1,5 @@
+// src/pages/HomePage.js
+
 import React, { useState, useEffect } from "react";
 import { Element, scroller } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
@@ -6,7 +8,7 @@ import Header from "../components/Header";
 import Profile from "../components/Profile";
 import Career from "../components/Career";
 import BlogList from "../components/BlogList";
-import Projects from "../components/Projects"; // 新しいコンポーネントのインポート
+import ProjectsTimeline from "../components/ProjectsTimeline";
 import Footer from "../components/Footer";
 import "../assets/styles/intro.css";
 import backgroundImage from "../assets/images/background.jpg";
@@ -92,9 +94,7 @@ const HomePage = () => {
           </Element>
 
           <Element name="projectsSection">
-            {" "}
-            {/* 新しいセクション */}
-            <Projects />
+            <ProjectsTimeline />
           </Element>
 
           <Element name="blogSection">
