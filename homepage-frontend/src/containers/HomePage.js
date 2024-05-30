@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Profile from "../components/Profile";
 import Career from "../components/Career";
 import BlogList from "../components/BlogList";
+import Projects from "../components/Projects"; // 新しいコンポーネントのインポート
 import Footer from "../components/Footer";
 import "../assets/styles/intro.css";
 import backgroundImage from "../assets/images/background.jpg";
@@ -90,8 +91,10 @@ const HomePage = () => {
             <Profile />
           </Element>
 
-          <Element name="careerSection">
-            <Career />
+          <Element name="projectsSection">
+            {" "}
+            {/* 新しいセクション */}
+            <Projects />
           </Element>
 
           <Element name="blogSection">
