@@ -1,5 +1,12 @@
 from rest_framework import serializers
+from django.contrib.auth.models import User
 from .models import Profile, BlogPost, Skill, Career, Project
+
+# Userモデルのシリアライザを定義します
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username']  # 必要に応じて他のフィールドも追加可能
 
 # BlogPostモデルのシリアライザを定義します
 class BlogPostSerializer(serializers.ModelSerializer):
@@ -37,6 +44,8 @@ class ProfileSerializer(serializers.ModelSerializer):
     careers = CareerSerializer(many=True, read_only=True)
     # Projectモデルをネストしてシリアライズします
     projects = ProjectSerializer(many=True, read_only=True)
+    # Userモデルをネストしてシリアライズします
+    user = UserSerializer(read_only=True)
 
     class Meta:
         model = Profile
