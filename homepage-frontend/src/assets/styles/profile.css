@@ -1,17 +1,52 @@
+/* profile.css */
 .profile-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .profile-header {
   text-align: center;
+  animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .profile-picture {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  animation: scaleUp 0.5s ease-in-out;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .profile-name {
@@ -27,10 +62,13 @@
   font-size: 20px;
   margin-bottom: 10px;
   font-weight: bold;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 .profile-description {
   font-size: 16px;
+  text-align: center;
 }
 
 .skills-list {
@@ -38,6 +76,7 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .skill-item {
@@ -46,6 +85,7 @@
   align-items: center;
   width: 150px;
   text-align: center;
+  animation: fadeIn 2.5s ease-in-out;
 }
 
 .skill-item h4 {
@@ -54,10 +94,20 @@
 
 .timeline-container {
   margin-top: 20px;
+  animation: fadeIn 3s ease-in-out;
 }
 
 .chart-container {
   width: 150px;
   height: 150px;
   position: relative;
+}
+
+/* 追加するCSS */
+.page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  will-change: transform, opacity;
 }
