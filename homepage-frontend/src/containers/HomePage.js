@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Typing from "react-typing-effect";
 import Header from "../components/Header";
 import Profile from "../components/Profile";
-import Career from "../components/Career";
 import BlogList from "../components/BlogList";
 import ProjectsTimeline from "../components/ProjectsTimeline";
 import Footer from "../components/Footer";

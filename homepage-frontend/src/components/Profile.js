@@ -1,87 +1,98 @@
-import React, { useEffect, useState, useRef } from "react";
-import axios from "axios";
-import { useSpring, animated } from "react-spring";
-import { useInView } from "react-intersection-observer";
-import "../assets/styles/profile.css";
+import React, { useState, useEffect } from "react";
+import Slider from "react-slick";
 import CareerTimeline from "./CareerTimeline";
 import PieChartComponent from "./PieChartComponent";
-
-const ProfilePage = ({ children }) => {
-  const [ref, inView] = useInView({
-    threshold: 0.5, // ビューポートの50％が表示されるとトリガー
-  });
-
-  const props = useSpring({
-    opacity: inView ? 1 : 0,
-    transform: inView ? "translateY(0)" : "translateY(50px)",
-    config: { mass: 1, tension: 120, friction: 14 },
-  });
-
-  return (
-    <animated.div className="page" ref={ref} style={props}>
-      {children}
-    </animated.div>
-  );
-};
+import "../assets/styles/profile.css";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:8000/api/profiles/1/") // DjangoサーバーのURLを使用
-      .then((response) => {
-        console.log(response.data); // デバッグのためにデータをログ出力
-        setProfile(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching profile data:", error);
-      });
+    fetchProfileData();
   }, []);
+
+  const fetchProfileData = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/api/profiles/1/");
+      const data = await response.json();
+      setProfile(data);
+    } catch (error) {
+      console.error("Error fetching profile data:", error);
+    }
+  };
 
   if (!profile) {
     return <div>Loading...</div>;
   }
 
+  const NextArrow = ({ onClick }) => (
+    <button className="arrow-button arrow-right" onClick={onClick}>
+      &gt;
+    </button>
+  );
+
+  const PrevArrow = ({ onClick }) => (
+    <button className="arrow-button arrow-left" onClick={onClick}>
+      &lt;
+    </button>
+  );
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true, // 自動再生を有効にする
+    autoplaySpeed: 3000, // 3秒ごとにスライド
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+  };
+
   return (
     <div className="profile-container">
-      <ProfilePage>
-        <div className="profile-header">
-          <img
-            src={`${profile.profile_picture}`}
-            alt="Profile"
-            className="profile-picture"
-          />
-          <h2 className="profile-name">{profile.user.username}</h2>
-        </div>
-      </ProfilePage>
-      <ProfilePage>
-        <div className="profile-body">
-          <h3 className="section-title">About Me</h3>
-          <p className="profile-description">{profile.bio}</p>
-        </div>
-      </ProfilePage>
-      <ProfilePage>
-        <div className="profile-body">
-          <h3 className="section-title">Skills</h3>
-          <div className="skills-list">
-            {profile.skills.map((skill) => (
-              <div key={skill.id} className="skill-item">
-                <h4>{skill.name}</h4>
-                <PieChartComponent skill={skill} />
-              </div>
-            ))}
+      <Slider {...settings}>
+        <div className="section">
+          <div className="profile-header">
+            <img
+              src={`${profile.profile_picture}`}
+              alt="Profile"
+              className="profile-picture"
+            />
+            <h2 className="profile-name">{profile.user.username}</h2>
           </div>
         </div>
-      </ProfilePage>
-      <ProfilePage>
-        <div className="profile-body">
-          <h3 className="section-title">Experience</h3>
-          <div className="timeline-container">
-            <CareerTimeline careers={profile.careers} />
+
+        <div className="section">
+          <div className="profile-body">
+            <h3 className="section-title">About Me</h3>
+            <p className="profile-description">{profile.bio}</p>
           </div>
         </div>
-      </ProfilePage>
+
+        <div className="section">
+          <div className="profile-body">
+            <h3 className="section-title">Skills</h3>
+            <div className="skills-list">
+              {profile.skills.map((skill) => (
+                <div key={skill.id} className="skill-item">
+                  <h4>{skill.name}</h4>
+                  <PieChartComponent skill={skill} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="section">
+          <div className="profile-body">
+            <h3 className="section-title">Experience</h3>
+            <div className="timeline-container">
+              <CareerTimeline careers={profile.careers} />
+            </div>
+          </div>
+        </div>
+      </Slider>
     </div>
   );
 };
