@@ -2,7 +2,6 @@
 
 .timeline-container {
   padding: 40px 20px;
-  background-color: #f0f0f0;
   text-align: center;
 }
 
@@ -81,4 +80,8 @@
 .vertical-timeline-element-content:hover .fa-calendar-alt,
 .vertical-timeline-element-content:hover .fa-user-tie {
   color: rgb(56, 142, 60);
+}
+
+.vertical-timeline::before {
+  background: rgb(76, 175, 80); /* タイムラインの色を変更 */
 }
