@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import "../assets/styles/bloglist.css";
+import "../assets/styles/bloglist.module.css";
 
 const BlogList = () => {
   const [posts, setPosts] = useState([]);
